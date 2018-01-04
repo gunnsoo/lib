@@ -16,10 +16,6 @@ class API(object):
         self.api_key = api_key
         self.api_secret = api_secret
 
-    def markets(self, **params):
-        endpoint = "/v1/markets"
-        return self.request(endpoint, params=params)
-
     def request(self, endpoint, method="GET", params=None):
         url = self.api_url + endpoint
         body = ""
@@ -68,6 +64,10 @@ class API(object):
         return content
 
     """HTTP Public API"""
+
+    def markets(self, **params):
+        endpoint = "/v1/markets"
+        return self.request(endpoint, params=params)
 
     def board(self, **params):
         """Order Book
