@@ -81,7 +81,7 @@ class API(object):
         return self.request(endpoint, params=params)
 
     def shop_rate(self, pair, **params):
-        endpoint = "/api/rate" + str(pair)
+        endpoint = "/api/rate/" + str(pair)
         return self.request(endpoint, params=params)
 
     """HTTP Private API"""
